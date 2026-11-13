@@ -12,6 +12,25 @@ from sygma_chrome import site_footer, site_header_block, static_head_extras
 ROOT = Path(__file__).resolve().parents[2]
 
 
+def _load_cache_bust():
+    import importlib.util
+
+    path = ROOT / "platform" / "scripts" / "cache_bust.py"
+    spec = importlib.util.spec_from_file_location("cache_bust", path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Cannot load {path}")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod.MINIMAL_CSS_BUST
+
+
+MINIMAL_CSS_BUST = _load_cache_bust()
+
+
+def _minimal_css_href(depth: int) -> str:
+    return f"{_prefix(depth)}assets/sygma-minimal.css?v={MINIMAL_CSS_BUST}"
+
+
 def _load_portfolio_cases():
     import importlib.util
 
@@ -346,7 +365,7 @@ def _breadcrumb(depth: int, title: str) -> str:
     hub = "/portfolio/" if depth == 0 else f"{p}portfolio/"
     return f"""<nav class="pf-crumb container" aria-label="Breadcrumb">
   <ol>
-    <li><a href="/">Home</a></li>
+    <li><a href="{_root_href(depth)}">Home</a></li>
     <li><a href="{_esc(hub)}">Portfolio</a></li>
     <li aria-current="page">{_esc(title)}</li>
   </ol>
@@ -373,7 +392,7 @@ def render_detail(case: PortfolioCase, *, depth: int = 2) -> str:
   <link rel="canonical" href="{_esc(canonical)}" />
   <link rel="icon" href="{p}favicon.ico" />
   <link rel="stylesheet" href="{THEME_CSS}" />
-  <link rel="stylesheet" href="{p}assets/sygma-minimal.css?v=2026111333" />
+  <link rel="stylesheet" href="{_minimal_css_href(depth)}" />
   <link rel="stylesheet" href="{_pf_css_href(depth)}" />
 </head>
 <body class="pf-body">
@@ -458,7 +477,7 @@ def render_hub(*, depth: int = 1) -> str:
   <link rel="canonical" href="https://sygmamedia.com/portfolio/" />
   <link rel="icon" href="{p}favicon.ico" />
   <link rel="stylesheet" href="{THEME_CSS}" />
-  <link rel="stylesheet" href="{p}assets/sygma-minimal.css?v=2026111333" />
+  <link rel="stylesheet" href="{_minimal_css_href(depth)}" />
   <link rel="stylesheet" href="{_pf_css_href(depth)}" />
 </head>
 <body class="pf-body">

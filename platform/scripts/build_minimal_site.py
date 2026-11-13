@@ -1560,7 +1560,21 @@ def patch_one_html(text: str, path: Path, base: Path) -> str:
 
 THEME_CSS_BUST = "2026111326"
 HERO_VEIL_BUST = "2026111322"
-MINIMAL_CSS_BUST = "2026111334"
+
+
+def _load_minimal_css_bust() -> str:
+    import importlib.util
+
+    path = ROOT / "platform" / "scripts" / "cache_bust.py"
+    spec = importlib.util.spec_from_file_location("cache_bust", path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Cannot load {path}")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod.MINIMAL_CSS_BUST
+
+
+MINIMAL_CSS_BUST = _load_minimal_css_bust()
 
 
 def bump_theme_cache(base: Path) -> int:
@@ -1577,7 +1591,7 @@ def bump_theme_cache(base: Path) -> int:
 
 
 def bump_minimal_css_cache(base: Path) -> int:
-    pat = re.compile(r'(href="(?:\.\./)*assets/sygma-minimal\.css)(?:\?v=\d+)?(")')
+    pat = re.compile(r'(href="(?:(?:\.\./)*|/)assets/sygma-minimal\.css)(?:\?v=\d+)?(")')
     n = 0
     for path in base.rglob("*.html"):
         text = path.read_text(encoding="utf-8", errors="replace")
