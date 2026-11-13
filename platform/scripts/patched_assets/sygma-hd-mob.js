@@ -1,0 +1,124 @@
+/** Mobile drawer — match Aesthetic Launch Lab: Services/Locations/Guides expand sub-menus. */
+(function () {
+  function q(sel) {
+    return document.querySelector(sel);
+  }
+
+  function panelEl() {
+    return q("#hd-mob, .hd-mob");
+  }
+
+  function scrimEl() {
+    return q(".hd-scrim");
+  }
+
+  function menuOpen() {
+    var panel = panelEl();
+    return !!(panel && panel.classList.contains("is-on"));
+  }
+
+  function unlockScroll() {
+    if (!menuOpen()) {
+      document.body.style.removeProperty("overflow");
+      document.documentElement.style.removeProperty("overflow");
+    }
+  }
+
+  function setOpen(open) {
+    var burger = q(".hd-burger");
+    var panel = panelEl();
+    var header = q("header.hd");
+    if (!burger || !panel || !header) return;
+
+    burger.classList.toggle("is-x", open);
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+    burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    panel.classList.toggle("is-on", open);
+    header.classList.toggle("is-mob", open);
+    var scrim = scrimEl();
+    if (scrim) scrim.classList.toggle("is-on", open);
+
+    /* React sets inert when closed — must clear when we open or summaries won't work */
+    if (open) {
+      panel.removeAttribute("inert");
+      panel.setAttribute("aria-modal", "true");
+    } else {
+      panel.setAttribute("inert", "");
+      panel.removeAttribute("aria-modal");
+      panel.querySelectorAll("details[open]").forEach(function (d) {
+        d.removeAttribute("open");
+      });
+      unlockScroll();
+    }
+  }
+
+  function bind() {
+    var burger = q(".hd-burger");
+    var panel = panelEl();
+    if (!burger || !panel || burger.dataset.sygmaMob) return;
+    burger.dataset.sygmaMob = "1";
+
+    burger.addEventListener("click", function () {
+      var before = burger.getAttribute("aria-expanded");
+      setTimeout(function () {
+        var after = burger.getAttribute("aria-expanded");
+        var domOpen = panel.classList.contains("is-on");
+        if (before === after) {
+          setOpen(!domOpen);
+        } else if (after === "true" && !domOpen) {
+          setOpen(true);
+        } else if (after === "false" && domOpen) {
+          setOpen(false);
+        }
+        unlockScroll();
+      }, 0);
+    });
+
+    panel.addEventListener("click", function (e) {
+      if (e.target.closest("summary")) return;
+      var leaf = e.target.closest(".hd-sub a[href], a.hd-mob-k[href]");
+      if (leaf && !leaf.classList.contains("hd-sub-all")) {
+        setOpen(false);
+      }
+    });
+
+    var scrim = scrimEl();
+    if (scrim && !scrim.dataset.sygmaMobScrim) {
+      scrim.dataset.sygmaMobScrim = "1";
+      scrim.addEventListener("click", function () {
+        if (menuOpen()) setOpen(false);
+      });
+    }
+  }
+
+  function init() {
+    bind();
+    unlockScroll();
+  }
+
+  if (!window.__sygmaMobUnlock) {
+    window.__sygmaMobUnlock = true;
+    window.addEventListener("scroll", unlockScroll, { passive: true });
+    window.addEventListener("pageshow", unlockScroll);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && menuOpen()) setOpen(false);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+  var root = document.getElementById("root");
+  if (root && window.MutationObserver) {
+    new MutationObserver(function () {
+      bind();
+      var panel = panelEl();
+      if (panel && panel.classList.contains("is-on")) {
+        panel.removeAttribute("inert");
+      }
+      unlockScroll();
+    }).observe(root, { childList: true, subtree: true });
+  }
+})();

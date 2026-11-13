@@ -8,8 +8,12 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+SCRIPTS = Path(__file__).resolve().parent
 SOURCE = ROOT / "web-clones" / "01-sygma-media"
 DEST = ROOT / "web-clones" / "sygma-minimal"
+PATCHED_ASSETS = {
+    "sygma-hd-mob.js": SCRIPTS / "patched_assets" / "sygma-hd-mob.js",
+}
 
 # Core marketing routes (directories with index.html)
 ROUTE_DIRS = [
@@ -1988,6 +1992,19 @@ def write_minimal_css(dest: Path) -> None:
     (dest / "assets" / "sygma-minimal.css").write_text(MINIMAL_CSS, encoding="utf-8")
 
 
+def apply_patched_assets(dest: Path) -> int:
+    """Overlay tracked JS fixes onto copied source assets."""
+    assets = dest / "assets"
+    if not assets.is_dir():
+        return 0
+    n = 0
+    for name, src in PATCHED_ASSETS.items():
+        if src.is_file():
+            shutil.copy2(src, assets / name)
+            n += 1
+    return n
+
+
 def main() -> int:
     if not SOURCE.is_dir():
         print(f"Missing source: {SOURCE}", file=sys.stderr)
@@ -2001,6 +2018,8 @@ def main() -> int:
         src = SOURCE / name
         if src.is_dir():
             shutil.copytree(src, DEST / name)
+
+    patched_assets = apply_patched_assets(DEST)
 
     for name in ROOT_FILES:
         src = SOURCE / name
@@ -2081,6 +2100,7 @@ npx wrangler pages deploy . --project-name=sygma-minimal
     print(f"  spa_bootstrap_patched={spa_bootstrapped}")
     print(f"  canonical_links_patched={canonical_links}")
     print(f"  asset_seo_patches={asset_seo_patches}")
+    print(f"  patched_assets={patched_assets}")
     if min_n:
         saved = min_before - min_after
         pct = (100.0 * saved / min_before) if min_before else 0
