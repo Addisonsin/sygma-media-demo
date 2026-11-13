@@ -1,0 +1,1 @@
+(function(){var path=window.location.pathname;if(/^\/blog(\/|$)/.test(path)){window.location.replace("/");return;}document.documentElement.classList.add("sygma-no-blog");})();

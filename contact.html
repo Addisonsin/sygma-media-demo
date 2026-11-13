@@ -1,159 +1,246 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Contact | Sygma Media</title>
-<meta name="description" content="Request a complimentary clinic growth plan. We'll audit your current patient acquisition and return the first three high-impact fixes we'd make.">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request Clinic Growth Blueprint — Sygma Media</title>
+  <meta name="description" content="Apply for a confidential clinic growth audit and local competitive analysis for your aesthetic practice." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="grain-overlay"></div>
 
-<div class="top">
-  <div class="wrap">
-    <span><b>Sygma Media</b> — Growth partner for dermatology and aesthetic clinics</span>
-    <span>Registered in New York · <a href="contact.html">Request Clinic Growth Plan →</a></span>
-  </div>
-</div>
+  <!-- ── Floating Glass Header ──────────────────────────────── -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        Sygma<span>Media</span><div class="logo-dot"></div>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="services.html">Services &amp; Protocol</a></li>
+        <li><a href="results.html">Case Studies</a></li>
+        <li><a href="pricing.html">Investment</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
 
-<header>
-  <div class="wrap nav">
-    <a class="logo" href="index.html">Sygma<span>Media</span></a>
-    <nav class="navlinks">
-      <a href="services.html">Services</a>
-      <a href="results.html">Results</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <a class="btn" href="contact.html">Get My Growth Plan &rarr;</a>
-    <button class="nav-toggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+      <div class="nav-cta-group">
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 22px; font-size: 12.5px;">Claim Growth Blueprint →</a>
+      </div>
 
-<main>
-  <!-- PAGE HERO -->
-  <section class="pageHero">
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- ── Contact Hero & Form Section ────────────────────────── -->
+  <section class="hero" style="padding-bottom: 90px;">
+    <div class="hero-glow-1"></div>
     <div class="wrap">
-      <div class="eyebrow">Contact</div>
-      <h1>Tell us where you want to grow.</h1>
-      <p class="lead">We'll review your current presence and come back with the first three things we'd change.</p>
-    </div>
-  </section>
-
-  <!-- CONTACT INTAKE SECTION -->
-  <section class="section">
-    <div class="wrap contact">
-      <div>
-        <div class="eyebrow">Consultation Request</div>
-        <h2>Get My Growth Plan</h2>
-        <p class="lead">No complicated brief. Just enough information for us to understand your business and patient acquisition goals.</p>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1.15fr; gap: 60px; align-items: start;">
         
-        <div class="quote">
-          <b>231</b>
-          <p>Booked patient appointments generated in 90 days in a high-intent dermatology campaign.</p>
+        <!-- Left: Briefing Info -->
+        <div>
+          <span class="section-tag">Private Application</span>
+          <h1 class="hero-title" style="font-size: clamp(38px, 4.5vw, 60px); text-align: left; margin-bottom: 20px;">
+            Let’s Engineer Your Clinic’s <em>Growth Blueprint</em>.
+          </h1>
+          <p class="hero-lead" style="text-align: left; margin: 0 0 36px;">
+            Tell us about your practice. Within 24 hours, our senior partners will analyze your zip code's search competition, speed-to-lead latency, and untapped high-ticket procedure demand.
+          </p>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 28px; margin-bottom: 28px;">
+            <div style="font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 8px;">
+              DOCUMENTED PROOF
+            </div>
+            <div style="font-family: var(--font-display); font-size: 38px; color: #fff; font-weight: 700;">
+              231 Bookings
+            </div>
+            <p style="font-size: 13.5px; color: var(--text-muted); margin: 6px 0 0;">
+              Generated in 90 days for a dermatology practice at $19.05 per confirmed consultation.
+            </p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 14px; font-size: 13.5px; color: var(--text-muted);">
+            <div>📍 <strong>Headquarters:</strong> New York, NY · Sygma Media LLC</div>
+            <div>📧 <strong>Direct Inquiries:</strong> exec@sygmamedia.com</div>
+            <div>⚡ <strong>Latency SLA:</strong> Direct response within 1 business day</div>
+            <div style="color: var(--emerald);">🔒 <strong>HIPAA &amp; NDA:</strong> Strict confidentiality guaranteed</div>
+          </div>
         </div>
 
-        <div class="note">
-          <b>Privacy Assurance:</b> We do not ask for patient health information through this form.
+        <!-- Right: The Application Card -->
+        <div style="background: var(--bg-card); border: 1.5px solid rgba(212, 175, 55, 0.3); border-radius: var(--radius-lg); padding: 44px; box-shadow: 0 30px 80px rgba(0,0,0,0.7), var(--glow-ambient);">
+          <h3 style="font-size: 22px; color: #fff; margin-bottom: 6px;">Request Confidential Audit</h3>
+          <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 26px;">
+            Fill in your clinic parameters to receive your personalized audit.
+          </p>
+
+          <form onsubmit="event.preventDefault(); alert('Application received. A senior partner will contact you within 24 hours with your custom clinic blueprint.');">
+            <div style="display: flex; flex-direction: column; gap: 18px;">
+              
+              <div>
+                <label style="display: block; font-size: 12px; font-weight: 700; color: var(--champagne); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">
+                  Clinic / Practice Name *
+                </label>
+                <input type="text" required placeholder="e.g. Tribeca Aesthetic Dermatology" 
+                  style="width: 100%; padding: 14px 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-size: 14px; outline: none;">
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div>
+                  <label style="display: block; font-size: 12px; font-weight: 700; color: var(--champagne); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">
+                    City &amp; Zip Code *
+                  </label>
+                  <input type="text" required placeholder="New York, 10013" 
+                    style="width: 100%; padding: 14px 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-size: 14px; outline: none;">
+                </div>
+                <div>
+                  <label style="display: block; font-size: 12px; font-weight: 700; color: var(--champagne); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">
+                    Primary Specialty *
+                  </label>
+                  <select required style="width: 100%; padding: 14px 16px; background: #141720; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-size: 14px; outline: none;">
+                    <option value="" disabled selected>Select Specialty</option>
+                    <option value="dermatology">Aesthetic Dermatology</option>
+                    <option value="medspa">Medical Spa &amp; Injectables</option>
+                    <option value="plasticsurgery">Plastic / Cosmetic Surgery</option>
+                    <option value="longevity">Longevity &amp; Hair Restoration</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label style="display: block; font-size: 12px; font-weight: 700; color: var(--champagne); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">
+                  Clinic Website URL
+                </label>
+                <input type="url" placeholder="https://yourclinic.com" 
+                  style="width: 100%; padding: 14px 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-size: 14px; outline: none;">
+              </div>
+
+              <div>
+                <label style="display: block; font-size: 12px; font-weight: 700; color: var(--champagne); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">
+                  Current Monthly Ad Spend
+                </label>
+                <select style="width: 100%; padding: 14px 16px; background: #141720; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-size: 14px; outline: none;">
+                  <option>Not currently running paid ads</option>
+                  <option>Under $2,500 / month</option>
+                  <option>$2,500 – $7,500 / month</option>
+                  <option>$7,500 – $20,000 / month</option>
+                  <option>$20,000+ / month (Enterprise)</option>
+                </select>
+              </div>
+
+              <div>
+                <label style="display: block; font-size: 12px; font-weight: 700; color: var(--champagne); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">
+                  Doctor / Executive Work Email *
+                </label>
+                <input type="email" required placeholder="dr.smith@clinic.com" 
+                  style="width: 100%; padding: 14px 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-size: 14px; outline: none;">
+              </div>
+
+              <div>
+                <label style="display: block; font-size: 12px; font-weight: 700; color: var(--champagne); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">
+                  What Is Your Primary Growth Objective?
+                </label>
+                <textarea placeholder="e.g. Fill Morpheus8 &amp; Sculptra appointments, decrease front desk response time, expand into 2nd location..."
+                  style="width: 100%; min-height: 100px; padding: 14px 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: #fff; font-size: 14px; outline: none; font-family: var(--font-sans);"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="padding: 16px; font-size: 15px; width: 100%;">
+                Submit Practice Application &rarr;
+              </button>
+
+            </div>
+          </form>
         </div>
 
-        <div style="margin-top:28px; display:flex; flex-direction:column; gap:12px;">
-          <div style="font-size:14px; color:var(--muted); display:flex; align-items:center; gap:8px;">
-            <span style="color:var(--green); font-weight:800;">✓</span> Direct partner review within 24–48 hours
-          </div>
-          <div style="font-size:14px; color:var(--muted); display:flex; align-items:center; gap:8px;">
-            <span style="color:var(--green); font-weight:800;">✓</span> 3 concrete bottlenecks identified on your current site or ad accounts
-          </div>
-          <div style="font-size:14px; color:var(--muted); display:flex; align-items:center; gap:8px;">
-            <span style="color:var(--green); font-weight:800;">✓</span> Clear, actionable revenue plan — no pushy agency pitch
-          </div>
-        </div>
       </div>
 
-      <div>
-        <form class="form" id="contactForm">
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-            <div class="field">
-              <label for="clinicName">Business / Clinic name</label>
-              <input id="clinicName" name="clinicName" placeholder="e.g. Park Avenue Dermatology" required>
-            </div>
-            <div class="field">
-              <label for="city">City</label>
-              <input id="city" name="city" placeholder="e.g. New York, NY" required>
-            </div>
-          </div>
+    </div>
+  </section>
 
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-            <div class="field">
-              <label for="website">Website</label>
-              <input id="website" name="website" type="url" placeholder="https://">
-            </div>
-            <div class="field">
-              <label for="adSpend">Monthly ad spend</label>
-              <select id="adSpend" name="adSpend">
-                <option>Not running ads</option>
-                <option>Under $2,000</option>
-                <option>$2,000–$5,000</option>
-                <option>$5,000+</option>
-              </select>
-            </div>
-          </div>
+  <!-- ── 3-Step Process ─────────────────────────────────────── -->
+  <section class="section-pad" style="background: rgba(12, 14, 20, 0.5);">
+    <div class="wrap">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <span class="section-tag">What Happens Next</span>
+        <h2 class="section-title">The Onboarding <em>Protocol</em></h2>
+      </div>
 
-          <div class="field">
-            <label for="workEmail">Work email</label>
-            <input id="workEmail" name="workEmail" type="email" placeholder="clinic@domain.com" required>
-          </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 32px;">
+          <span style="font-family: var(--font-display); font-size: 38px; color: var(--gold); display: block; margin-bottom: 12px;">01</span>
+          <h4 style="color: #fff; font-size: 18px; margin-bottom: 10px;">Zip Code Competitive Audit</h4>
+          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin: 0;">
+            We scan search volume for top aesthetic procedures in your radius, inspect your competitors' ads, and locate missed revenue leaks.
+          </p>
+        </div>
 
-          <div class="field">
-            <label for="message">What would you like to improve?</label>
-            <textarea id="message" name="message" placeholder="More leads, more bookings, better follow-up..."></textarea>
-          </div>
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 32px;">
+          <span style="font-family: var(--font-display); font-size: 38px; color: var(--emerald); display: block; margin-bottom: 12px;">02</span>
+          <h4 style="color: #fff; font-size: 18px; margin-bottom: 10px;">Private Strategy Briefing</h4>
+          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin: 0;">
+            A 20-minute Zoom call with a senior partner to present the custom blueprint, patient acquisition forecast, and EHR integration plan.
+          </p>
+        </div>
 
-          <button class="btn" type="submit" style="width:100%; font-size:15px; padding:15px 22px;">Get My Growth Plan &rarr;</button>
-
-          <div id="formNotice" style="display:none; margin-top:16px; padding:14px 18px; background:var(--mint); border:1px solid #CFE9DD; border-radius:10px; color:var(--green2); font-weight:600; font-size:14px; text-align:center;">
-            ✓ Growth plan request received! A senior partner will analyze your practice and reach out shortly.
-          </div>
-        </form>
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 32px;">
+          <span style="font-family: var(--font-display); font-size: 38px; color: var(--champagne); display: block; margin-bottom: 12px;">03</span>
+          <h4 style="color: #fff; font-size: 18px; margin-bottom: 10px;">7-Day Rapid Deployment</h4>
+          <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin: 0;">
+            We build your bespoke high-converting funnels, connect your calendar, activate AI speed-to-lead, and launch acquisition campaigns.
+          </p>
+        </div>
       </div>
     </div>
   </section>
-</main>
 
-<footer>
-  <div class="wrap">
-    <div class="foot">
-      <div>
-        <div class="logo" style="color:#fff">Sygma<span>Media</span></div>
-        <p style="margin-top:15px;max-width:330px;line-height:1.6;color:#9DAEC3;">Growth partner for dermatology and aesthetic clinics. Customer acquisition, conversion and automation.</p>
+  <!-- ── Luxury Dark Footer ─────────────────────────────────── -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a href="index.html" class="logo">
+            Sygma<span>Media</span><div class="logo-dot"></div>
+          </a>
+          <p>
+            The dedicated patient acquisition and AI conversion partner for premier dermatology, cosmetic surgery, and aesthetic clinics worldwide.
+          </p>
+        </div>
+        <div class="foot-col">
+          <h4>Architecture</h4>
+          <a href="services.html">Patient Acquisition</a>
+          <a href="services.html">AI Speed-to-Lead</a>
+          <a href="services.html">Local Search Monopoly</a>
+          <a href="services.html">VIP 90-Day Recall</a>
+        </div>
+        <div class="foot-col">
+          <h4>Case Studies</h4>
+          <a href="results.html">Dermatology Studies</a>
+          <a href="results.html">Plastic Surgery Funnels</a>
+          <a href="pricing.html">Investment Tiers</a>
+          <a href="about.html">About Sygma</a>
+        </div>
+        <div class="foot-col">
+          <h4>Direct Inquiries</h4>
+          <a href="contact.html" style="color: var(--gold);">Get Growth Blueprint</a>
+          <p style="margin-top: 14px; font-size: 12px; color: var(--text-dim);">
+            exec@sygmamedia.com<br>
+            New York, NY
+          </p>
+        </div>
       </div>
-      <div>
-        <h4>Explore</h4>
-        <a href="services.html">Services</a>
-        <a href="results.html">Results</a>
-        <a href="pricing.html">Pricing</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div>
-        <h4>Start</h4>
-        <a href="contact.html">Get My Growth Plan</a>
-        <a href="contact.html">Free Clinic Audit</a>
+      <div class="foot-bottom">
+        <div>&copy; 2026 Sygma Media LLC. All Rights Reserved.</div>
+        <div>HIPAA Compliant · High-Ticket Healthcare Protocol</div>
       </div>
     </div>
-    <div class="footBottom">
-      <span>&copy; 2026 Sygma Media LLC. All rights reserved.</span>
-      <span>New York, NY &middot; Privacy &middot; Terms</span>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script src="script.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,6 +1,14 @@
 .DS_Store
 .agents/
+.cursor/
+.wrangler/
 prototype-source/
 homepage-new.html
 design-exploration.html
 skills-lock.json
+aesthetic-launch-lab/
+platform/api/.venv/
+platform/api/data/
+platform/dashboard/node_modules/
+platform/dashboard/dist/
+monve_studio.html

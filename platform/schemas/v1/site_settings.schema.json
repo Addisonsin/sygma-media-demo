@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sygma-platform/site_settings/v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "business_name": { "type": "string" },
+    "phone_display": { "type": "string" },
+    "phone_e164": { "type": "string", "pattern": "^\\+[0-9]+$" },
+    "whatsapp_e164": { "type": "string", "pattern": "^\\+[0-9]+$" },
+    "email": { "type": "string", "format": "email" },
+    "address": { "type": "string" },
+    "social": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "format": "uri" }
+    }
+  },
+  "required": ["business_name"]
+}

@@ -1,0 +1,8 @@
+# Sygma Media — minimal agency site (generated)
+# Re-run: python3 platform/scripts/build_minimal_site.py
+
+User-agent: *
+Allow: /
+Disallow: /blog
+
+Sitemap: https://sygmamedia.com/sitemap.xml

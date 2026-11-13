@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sygma-platform/blog_post/v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "title": { "type": "string", "minLength": 1 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "excerpt": { "type": "string" },
+    "body_html": { "type": "string" },
+    "featured_logical_key": { "type": "string" },
+    "seo_title": { "type": "string" },
+    "seo_description": { "type": "string" },
+    "status": { "type": "string", "enum": ["draft", "published"] }
+  },
+  "required": ["title", "slug"]
+}

@@ -1,0 +1,3 @@
+# Optional deps for build_minimal_site.py (pip install -r platform/scripts/requirements-build.txt)
+rcssmin>=1.1.2
+rjsmin>=1.2.2

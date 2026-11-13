@@ -1,0 +1,58 @@
+# Sygma Media — minimal agency site (generated)
+# Re-run: python3 platform/scripts/build_minimal_site.py
+
+# Drop SEO city landings → services hub
+/aesthetic-clinic-seo/* /services/ 301
+/plastic-surgery-seo/* /services/ 301
+
+# Individual service landings → services hub (hub page kept)
+/services/:slug /services/ 301
+
+# Legacy / intake / admin
+/admin/* /contact/ 301
+/intake/* /contact/ 301
+/guides/* /services/ 301
+/payment-success/* /contact/ 301
+
+# Retired blog → services hub
+/blog /services/ 301
+/blog/ /services/ 301
+/blog/* /services/ 301
+
+# Legacy tools → services
+/tools/clinic-launch-calculator /services/ 301
+/tools/digital-readiness-checklist /services/ 301
+/tools/* /services/ 301
+
+# Legacy case studies → portfolio (hub + detail slugs)
+/case-studies /portfolio/ 301
+/case-studies/ /portfolio/ 301
+/case-studies/manhattan-dermatology /portfolio/manhattan-dermatology/ 301
+/case-studies/manhattan-dermatology/ /portfolio/manhattan-dermatology/ 301
+/case-studies/miami-luxe-medspa /portfolio/miami-luxe-medspa/ 301
+/case-studies/miami-luxe-medspa/ /portfolio/miami-luxe-medspa/ 301
+/case-studies/dallas-integrative-skin /portfolio/dallas-integrative-skin/ 301
+/case-studies/dallas-integrative-skin/ /portfolio/dallas-integrative-skin/ 301
+/case-studies/beverly-hills-surgical /portfolio/beverly-hills-surgical/ 301
+/case-studies/beverly-hills-surgical/ /portfolio/beverly-hills-surgical/ 301
+/case-studies/scottsdale-wellness /portfolio/scottsdale-wellness/ 301
+/case-studies/scottsdale-wellness/ /portfolio/scottsdale-wellness/ 301
+/case-studies/austin-medspa-collective /portfolio/austin-medspa-collective/ 301
+/case-studies/austin-medspa-collective/ /portfolio/austin-medspa-collective/ 301
+/case-studies/chicago-facial-institute /portfolio/chicago-facial-institute/ 301
+/case-studies/chicago-facial-institute/ /portfolio/chicago-facial-institute/ 301
+/case-studies/the-hampton-clinic /portfolio/manhattan-dermatology/ 301
+/case-studies/the-hampton-clinic/ /portfolio/manhattan-dermatology/ 301
+/case-studies/halcyon-medispa /portfolio/miami-luxe-medspa/ 301
+/case-studies/halcyon-medispa/ /portfolio/miami-luxe-medspa/ 301
+/case-studies/dr-harry-clinic /portfolio/beverly-hills-surgical/ 301
+/case-studies/dr-harry-clinic/ /portfolio/beverly-hills-surgical/ 301
+/case-studies/mesglo-london /portfolio/scottsdale-wellness/ 301
+/case-studies/mesglo-london/ /portfolio/scottsdale-wellness/ 301
+/case-studies/luxe-skin-glasgow /portfolio/austin-medspa-collective/ 301
+/case-studies/luxe-skin-glasgow/ /portfolio/austin-medspa-collective/ 301
+/case-studies/facial-sculpting /portfolio/chicago-facial-institute/ 301
+/case-studies/facial-sculpting/ /portfolio/chicago-facial-institute/ 301
+/case-studies/aesthetic-doctors-australia /portfolio/dallas-integrative-skin/ 301
+/case-studies/aesthetic-doctors-australia/ /portfolio/dallas-integrative-skin/ 301
+/case-studies/* /portfolio/:splat 301

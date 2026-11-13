@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sygma-platform/homepage/v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "hero": {
+      "type": "object",
+      "properties": {
+        "line1": { "type": "string" },
+        "line2_emphasis": { "type": "string" },
+        "eyebrow": { "type": "string" },
+        "heading": { "type": "string" },
+        "subheading": { "type": "string" },
+        "meta_title": { "type": "string" },
+        "meta_description": { "type": "string" },
+        "primary_cta_label": { "type": "string" },
+        "primary_cta_href": { "type": "string" },
+        "secondary_cta_label": { "type": "string" },
+        "secondary_cta_href": { "type": "string" }
+      },
+      "minProperties": 1
+    },
+    "trust_strip": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "required": ["hero"]
+}

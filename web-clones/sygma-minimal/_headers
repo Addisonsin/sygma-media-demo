@@ -1,0 +1,17 @@
+# Sygma Media cache headers
+/favicon.ico
+  Cache-Control: public, max-age=3600, must-revalidate
+/favicon-*
+  Cache-Control: public, max-age=3600, must-revalidate
+/apple-touch-icon.png
+  Cache-Control: public, max-age=3600, must-revalidate
+/icon-*.png
+  Cache-Control: public, max-age=3600, must-revalidate
+/assets/sygma-theme.css
+  Cache-Control: public, max-age=3600, must-revalidate
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/brand/*
+  Cache-Control: public, max-age=3600, must-revalidate

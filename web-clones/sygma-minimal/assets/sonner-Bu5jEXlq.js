@@ -1,0 +1,1 @@
+import{j as o,T as e}from"./vendor-react-dom-DdMI96s2.js";const a=({...r})=>o.jsx(e,{theme:"light",className:"toaster group",style:{"--normal-bg":"var(--popover)","--normal-text":"var(--popover-foreground)","--normal-border":"var(--border)"},...r});export{a as Toaster};
